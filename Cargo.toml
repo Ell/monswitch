@@ -1,0 +1,13 @@
+[package]
+name = "monswitch"
+version = "0.1.0"
+authors = ["Ell <alan@cattes.us>"]
+edition = "2018"
+
+[dependencies]
+num-traits = "0.2"
+num-derive = "0.3"
+
+[target.'cfg(windows)'.dependencies]
+systray = { git = "https://github.com/shayne/systray-rs" }
+winapi = { version = "0.3.8", features = ["winuser", "libloaderapi", "std", "windef", "minwindef", "physicalmonitorenumerationapi", "lowlevelmonitorconfigurationapi", "winnt", "impl-default", "shellapi"] }
