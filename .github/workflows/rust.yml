@@ -21,6 +21,11 @@ jobs:
           use-cross: true
           command: build
           args: --target x86_64-pc-windows-gnu --release
+      - uses: actions-rs/cargo@v1
+        with:
+          use-cross: true
+          command: strip
+          args: --target x86_64-pc-windows-gnu --release
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
